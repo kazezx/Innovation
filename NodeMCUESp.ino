@@ -73,6 +73,7 @@ void loop() {
   mfrc522.PICC_HaltA();
   mfrc522.PCD_StopCrypto1();
   String eid_user = String((char*)buffer2);
+  eid_user = "R01:"+ eid_user; //Add Device Control Number 
   Serial.println("Sending Packet");
   packet_sender(eid_user);
   delay(100);
